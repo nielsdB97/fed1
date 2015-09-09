@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Aanmelden voor CMD Amsterdam</title>
-	<link rel="stylesheet" type="text/css" href="http://cdn.foundation5.zurb.com/foundation.css">
+	<!-- <link rel="stylesheet" type="text/css" href="http://cdn.foundation5.zurb.com/foundation.css"> -->
 </head>
 <body>
 
@@ -17,11 +17,10 @@ Tijdens de opleiding werken studenten aan projecten voor echte opdrachtgevers. O
 Voor het aanmelden van stageplekken of projecten kunt u onderstaand formulier invullen. Wij nemen zo nodig contact met u op nadat het formulier is verstuurd. 
 Voor vragen of opmerkingen kunt u <a href="contact">contact</a> met ons opnemen.
 
-<h2>Contactgegevens:</h2>
 <form action="POST">
 	<section id="contactgegevens">
+	<h2>Contactgegevens</h2>
 		<fieldset>
-			<legend>Contactgegevens</legend>
 			<p>
 				<label for="naam">Naam</label>
 				<input type="text" id="naam" placeholder="Peter van Beek" required>
@@ -54,6 +53,7 @@ Voor vragen of opmerkingen kunt u <a href="contact">contact</a> met ons opnemen.
 	</section>
 
 	<section id="aanmelden_keuze">
+	<h2>Aanmelden</h2>
 		<fieldset>
 			<legend>Ik wil mij aanmelden</legend>
 			<p>
@@ -68,7 +68,7 @@ Voor vragen of opmerkingen kunt u <a href="contact">contact</a> met ons opnemen.
 	</section>
 
 	<section id="aanmelden_project_form">
-		<h2>Ik wil mij aanmelden voor een project</h2>
+		<h3>Ik wil mij aanmelden voor een project</h3>
 		<fieldset>
 			<legend>Algemene informatie over het project</legend>
 			<p>
@@ -99,7 +99,7 @@ Voor vragen of opmerkingen kunt u <a href="contact">contact</a> met ons opnemen.
 		<fieldset>
 			<legend>Het project is geschikt voor</legend>
 			<select required>
-				<option disabled selected>-- Selecteer een optie --</option>
+				<option disabled selected value="">-- Selecteer een optie --</option>
 				<option value="project_eerstejaarsstudenten">Tweedejaars studenten</option>
 				<option value="project_tweedejaarsstudenten">Afstudeer studenten</option>
 				<option value="project_derdejaarsstudenten">Afstudeer studenten</option>
@@ -118,7 +118,7 @@ Voor vragen of opmerkingen kunt u <a href="contact">contact</a> met ons opnemen.
 		<fieldset>
 			<legend>Het project is geschikt voor</legend>
 			<select required>
-				<option disabled selected>-- Selecteer een optie --</option>
+				<option disabled selected value="">-- Selecteer een optie --</option>
 				<option value="stage_tweedejaarsstudenten">Tweedejaars studenten</option>
 				<option value="stage_afstudeerstudenten">Afstudeer studenten</option>
 				<option value="stage_onbekend">Onbekend</option>
@@ -141,8 +141,8 @@ Voor vragen of opmerkingen kunt u <a href="contact">contact</a> met ons opnemen.
 		</fieldset>
 		<fieldset>
 			<legend>Stagewerkzaamheden</legend>
-			<span>Beschrijving</span>
-			<textarea placeholder="Een beschrijving van de stagewerkzaamheden" required></textarea>
+			<label for="stage_beschrijving">Beschrijving</label>
+			<textarea id="stage_beschrijving" placeholder="Een beschrijving van de stagewerkzaamheden" required></textarea>
 		</fieldset>
 		<fieldset>
 			<legend>Algemene informatie over het stagebedrijf</legend>
