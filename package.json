@@ -1,0 +1,27 @@
+{
+  "name": "niels",
+  "version": "1.0.0",
+  "description": "front-end development eindopdracht",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nielsdB97/fed1.git"
+  },
+  "author": "Niels de Bruin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nielsdB97/fed1/issues"
+  },
+  "homepage": "https://github.com/nielsdB97/fed1#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.3",
+    "grunt-browser-sync": "^2.1.3",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

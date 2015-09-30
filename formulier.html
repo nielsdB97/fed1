@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8">
+        <title>Formulierpagina</title>
+        <link rel="stylesheet" type="text/css" href="css/screen.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    </head>
+    <body>
+
+        <!-- header met logo & navigatie -->
+        <header>
+            <h1>CMD Amsterdam - Intranet</h1>
+            <p>Communication and Multimedia Design is een ontwerpopleiding voor interactieve media in Amsterdam.</p>
+            <div class="logo_container">
+                <img src="img/cmd_logo.png" alt="CMD logo">
+            </div>
+            <div class="nav_container">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Opleiding</a></li>
+                        <li><a href="#">Onderwijsprogramma</a></li>
+                        <li><a href="#">Organisatie</a></li>
+                        <li><a href="#">Stages en projecten</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <form method="get" action="Formulierpagina.html">
+                <label>
+                    Zoeken
+                    <input type="search" placeholder="Zoek op titel, beschrijving, etc…" name="q">
+                </label>
+                <button type="submit">Zoek!</button>
+            </form>
+            <p class="to-profile"><a href="#">Profielpagina Elena Harris</a></p>
+        </header>
+
+        <!-- Main article - Contact formulier  -->
+        <main>
+
+            <section id="aanmelden">
+                <h1>Aanmelden</h1>
+                <p>Bent u geïnteresseerd in samenwerken met CMD Amsterdam? Dat kan! Tijdens de opleiding werken studenten aan projecten voor echte opdrachtgevers. Ook lopen de studenten stage, in het tweede en afstudeerjaar.</p>
+                <p>CMD Amsterdam zoekt altijd naar positieve verbindingen met de creatieve stad Amsterdam.</p>
+                <p>Voor het aanmelden van stageplekken of projecten kunt u onderstaand formulier invullen. Wij nemen zo nodig contact met u op nadat het formulier is verstuurd. Voor vragen of opmerkingen kunt u <a href="#">contact</a> met ons op.</p>
+            </section>
+
+            <form method="post" action="Formulierpagina.html">
+
+                <fieldset>
+                    <legend>Contactgegevens</legend>
+                    <label>
+                        <span>Naam:</span>
+                        <input type="text" name="name" required>
+                        <em>vereist</em>
+                    </label>
+                    <label>
+                        <span>Bedrijf:</span>
+                        <input type="text" name="company" required>
+                        <em>vereist</em>
+                    </label>
+                    <label>
+                        <span>Adres:</span>
+                        <input type="text" name="address" required>
+                        <em>vereist</em>
+                    </label>
+                    <label>
+                        <span>Postcode:</span>
+                        <input type="text" name="postal" required>
+                        <em>vereist</em>
+                    </label>
+                    <label>
+                        <span>Telefoon:</span>
+                        <input type="tel" name="phone">
+                    </label>
+                    <label>
+                        <span>E-mailadres:</span>
+                        <input type="email" name="email" required>
+                        <em>vereist</em>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Ik wil mij aanmelden:</legend>
+                    <label>
+                        <input type="radio" name="submit-for" value="project">
+                        <span>Voor een project</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="submit-for" value="stage">
+                        <span>Als stagebedrijf</span>
+                    </label>
+                </fieldset>
+
+                <fieldset id="project">
+                    <legend>Project</legend>
+                    <label>
+                        <span>Titel:</span>
+                        <input type="text" name="project-title">
+                    </label>
+                    <label>
+                        <span>Opdrachtomschrijving:</span>
+                        <textarea name="project-description"></textarea>
+                    </label>
+                    <label>
+                        <span>Doelgroepomschrijving:</span>
+                        <textarea name="project-target-audience"></textarea>
+                    </label>
+                    <label>
+                        <span>Doelstelling/intentie van het project:</span>
+                        <textarea name="project-goal"></textarea>
+                    </label>
+                    <label>
+                        <span>Looptijd:</span>
+                        <input type="text" name="project-duration">
+                    </label>
+                    <label>
+                        <span>Deadline:</span>
+                        <input type="date" name="project-deadline">
+                    </label>
+                    <fieldset>
+                        <legend>Geschikt voor</legend>
+                        <label><input type="checkbox" name="project-eerstejaars"> Eerstejaars studenten</label>
+                        <label><input type="checkbox" name="project-tweedejaars"> Tweedejaars studenten</label>
+                        <label><input type="checkbox" name="project-derdejaars"> Derdejaars studenten</label>
+                        <label><input type="checkbox" name="project-afstudeer"> Afstudeer studenten</label>
+                        <label><input type="checkbox" name="project-onbekend"> Onbekend</label>
+                    </fieldset>
+                    <label>
+                        <span>Opmerking:</span>
+                        <textarea name="project-comments"></textarea>
+                    </label>
+                </fieldset>
+
+                <fieldset id="stage">
+                    <legend>Stage</legend>
+                    <fieldset>
+                        <legend>Geschikt voor</legend>
+                        <label><input type="checkbox" name="stage-tweedejaars"> Tweedejaars studenten</label>
+                        <label><input type="checkbox" name="stage-afstudeerders"> Afstudeer studenten</label>
+                        <label><input type="checkbox" name="stage-onbekend"> Onbekend</label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Hoe lang is de stage</legend>
+                        <label><input type="radio" name="stage-duration" value="10"> 10 weken</label>
+                        <label><input type="radio" name="stage-duration" value="20"> 20 weken</label>
+                    </fieldset>
+                    <label>
+                        <span>Begindatum:</span>
+                        <input type="date" name="stage-startdate">
+                    </label>
+                    <label>
+                        <span>Beschrijving stagewerkzaamheden</span>
+                        <textarea name="stage-description"></textarea>
+                    </label>
+                    <fieldset>
+                        <legend>Beschrijving stagebedrijf</legend>
+                        <label>
+                            <span>Bedrijfsnaam:</span>
+                            <input type="text" name="stage-company-name">
+                        </label>
+                        <label>
+                            <span>Adres:</span>
+                            <input type="text" name="stage-address">
+                        </label>
+                        <label>
+                            <span>Postcode:</span>
+                            <input type="text" name="stage-postal">
+                        </label>
+                        <label>
+                            <span>Plaats:</span>
+                            <input type="text" name="stage-place">
+                        </label>
+                        <label>
+                            <span>Sector:</span>
+                            <input type="text" name="stage-sector">
+                        </label>
+                        <label>
+                            <span>Core business:</span>
+                            <input type="text" name="stage-core-business">
+                        </label>
+                    </fieldset>
+                    <label>
+                        <span>Opmerking:</span>
+                        <textarea name="stage-comments"></textarea>
+                    </label>
+                </fieldset>
+
+                <input type="submit" value="Aanmelden">
+
+            </form>
+
+        </main>
+
+        <!-- 3 related projects - In the spotlight -->
+        <section class="related">
+
+            <h2>Voorbeeld projecten van studenten</h2>
+
+            <article>
+                <header>
+                    <h3>Project: Moet ik Rennen?</h3>
+                    <p>Tagline: Moet ik rennen is een applicatie voor de Nederlandse treinen. Hij toont je exact hoeveel tijd er nog is, voordat je trein vertrekt.</p>
+                </header>
+                <section>
+                    <h4>Omschrijving</h4>
+                    <dl>
+                        <dt>Studenten</dt>
+                        <dd>Tom Hoogenboom</dd>
+                        <dd>Bas Dobbelaer</dd>
+                        <dd>Mariëlle Rijkenberg</dd>
+                        <dd>Sven ten Hove</dd>
+
+                        <dt>Opdrachtgever</dt>
+                        <dd>Gemeeente Amsterdam, Dienst DIVV</dd>
+
+                        <dt>Jaar</dt>
+                        <dd>2012-2013</dd>
+
+                        <dt>Studiejaar</dt>
+                        <dd>Derde jaar</dd>
+
+                        <dt class="tags">Tags</dt>
+                        <dd>Mobiele Applicatie</dd>
+                        <dd>Publieke ruimte</dd>
+                        <dd>open data</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://vimeo.com/61573544">Promo</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Downloads</h4>
+                    <ul>
+                        <li><a href="bron.pdf" data-kb="1267">project_CMDA_Moet_ik_rennen.pdf</a> (1.3MB)</li>
+                        <li><a href="bron.vcf">Contactgegevens_CMDA_Moet_ik_rennen.vcf</a></li>
+                        <li><a href="bron.jpg" data-kb="569">Poster_CMDA_Moet_ik_rennen.jpg</a> (569KB)</li>
+                    </ul>
+                </section>
+            </article>
+
+            <article>
+                <header>
+                    <h3>Project: Muzieknote</h3>
+                    <p>Tagline: Muzieknote is een webapplicatie waarbij muziek en bijzondere verhalen worden gecombineerd om bewoners van Amersfoort met elkaar in contact te brengen.</p>
+                </header>
+                <section>
+                    <h4>Omschrijving</h4>
+                    <dl>
+                        <dt>Studenten</dt>
+                        <dd>Roan Vlutters</dd>
+                        <dd>Rowdy Boon</dd>
+                        <dd>Jurgen Ploeger</dd>
+                        <dd>Roy Visser</dd>
+
+                        <dt>Opdrachtgever</dt>
+                        <dd>Stichting Bonafide</dd>
+
+                        <dt>Jaar</dt>
+                        <dd>2012-2013</dd>
+
+                        <dt>Studiejaar</dt>
+                        <dd>Derde Jaar</dd>
+
+                        <dt class="tags">Tags</dt>
+                        <dd>Installatie</dd>
+                        <dd>Publieke ruimte</dd>
+                        <dd>Teamproject</dd>
+                        <dd>Web app</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://vimeo.com/81740715">Promo</a></li>
+                        <li><a href="http://muzieknote.nl">Website</a></li>
+                        <li><a href="https://www.behance.net/gallery/Muzieknote/14149359">Project</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Downloads</h4>
+                    <ul>
+                        <li><a href="bron.pdf" data-kb="33671">Project_CMDA_Muzieknote.pdf</a> (3.4MB)</li>
+                        <li><a href="bron.vcf">Contactgegevens_CMDA_Muzieknote.vcf</a></li>
+                        <li><a href="bron.jpg" data-kb="678">Poster_CMDA_Muzieknote.jpg</a> (678KB)</li>
+                    </ul>
+                </section>
+            </article>
+
+            <article>
+                <header>
+                    <h3>Project: TWOSOME</h3>
+                    <p>Tagline: TWOSOME is een smartphone applicatie voor jonge samenwonende stelletjes, die moeite hebben met het verdelen en bijhouden van het huishouden en dit een vervelende bezigheid vinden.</p>
+                </header>
+                <section>
+                    <h4>Omschrijving</h4>
+                    <dl>
+                        <dt>Student</dt>
+                        <dd>Aimée Rutten</dd>
+
+                        <dt>Opdrachtgever</dt>
+                        <dd>n.v.t.</dd>
+
+                        <dt>Jaar</dt>
+                        <dd>2013-2014</dd>
+
+                        <dt>Studiejaar</dt>
+                        <dd>Vierde jaar</dd>
+
+                        <dt class="tags">Tags</dt>
+                        <dd>Creative Award</dd>
+                        <dd>Afstudeerproject</dd>
+                        <dd>Behaviour design</dd>
+                        <dd>Gamification</dd>
+                        <dd>Mobiele Applicatie</dd>
+                        <dd>Social</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="http://marvl.in/17b008">Promo</a></li>
+                        <li><a href="http://www.pinterest.com/pin/246783254555699159/">Designs</a></li>
+                        <li><a href="https://vimeo.com/98737277">Demo</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Downloads</h4>
+                    <ul>
+                        <li><a href="bron.pdf" data-kb="23513">Project_CMDA_TWOSOME.pdf</a> (2,4MB)</li>
+                        <li><a href="bron.vcf">Contactgegevens_CMDA_TWOSOME.vcf</a></li>
+                        <li><a href="bron.jpg" data-kb="1381">Poster_CMDA_TWOSOME.jpg</a> (1381KB)</li>
+                    </ul>
+                </section>
+            </article>
+
+        </section>
+
+        <!-- Sidebar teksten en info: Laatste mededelingen, Agenda, Twitter -->
+        <aside>
+
+            <section>
+                <h2><a href="#">Laatste mededelingen</a></h2>
+                <article>
+                    <h3>Teamproject - Usabilitylab rooster</h3>
+                    <p>
+                        <time datetime="2012-02-14">14 februari 2012</time>
+                        <a href="#" rel="author">A.W.M. Feleus</a>
+                        Beste studenten, Aanstaande maandag is het instructiecollege voor het usabilitylab en vanaf dinsdag starten de eerste teams met testen. In jullie rooster is aangegeven wanneer jullie gaan testen en kunnen jullie ook zien met welk team. Let er op dat…
+                        <a href="#" rel="bookmark">lees verder</a>
+                    </p>
+                </article>
+                <article>
+                    <h3>V2 assessments rooster Blok 3</h3>
+                    <p>
+                        <time datetime="2012-02-15">15 februari 2012</time>
+                        <a href="#" rel="author">J.B. Wijnmaalen</a>
+                        Het V2 assessment rooster voor Blok 3 kan je  downloaden van de vakpagina.
+                        <a href="#" rel="bookmark">lees verder</a>
+                    </p>
+                </article>
+                <article>
+                    <h3>Portfoliogesprekken V1</h3>
+                    <p>
+                        <time datetime="2012-02-27">27 februari 2012</time>
+                        <a href="#" rel="author">H.H.G. Konickx</a>
+                        Het rooster voor mijn portfoliogesprekken staat online bij SLC Blok 3. Let op! Er kan nog eea veranderen. Houd het intranet in de gaten.
+                        <a href="#" rel="bookmark">lees verder</a>
+                    </p>
+                </article>
+                <article>
+                    <h3>Mediasociologie: tentamen en huiswerk week 7</h3>
+                    <p>
+                        <time datetime="2012-02-27">27 februari 2012</time>
+                        <a href="#" rel="author">T. Ploeg</a>
+                        Beste studenten Mediasociologie, Het tentamen Mediasociologie vindt plaats op maandag 26 maart van 16.50u tot 18.30u. Locatie wordt nog bekend gemaakt. Voor…
+                        <a href="#" rel="bookmark">lees verder</a>
+                    </p>
+                </article>
+                <article>
+                    <h3>Verdien 2 SRP!</h3>
+                    <p>
+                        <time datetime="2012-02-29">29 februari 2012</time>
+                        <a href="#" rel="author">L.C.D.J. van der Vlies</a>
+                        Interesse in online marketing? Verdien 2 SRP bij een project voor Knowhowww, een online marketingbureau in Amsterdam. Een van de projecten voor dit bureau is Pet Plan, een verzekeringsmaatschappij voor huisdieren. Knowhowww wil graag een viral…
+                        <a href="#" rel="bookmark">lees verder</a>
+                    </p>
+                </article>
+            </section>
+            
+            <section>
+                <h2><a href="#">Uitagenda</a></h2>
+                <article>
+                    <h3>Fiber Festival</h3>
+                    <footer>
+                        <p>Op <time datetime="2012-03-24">24 maart</time> in het Trouw gebouw</p>
+                    </footer>
+                    <p>
+                        <a href="#" rel="author">M.S. t Hooft</a>
+                        Audiovisueel netwerkfestival in Trouw Amsterdam. Meer info: http://www.fiber-space.nl
+                        <a href="#" rel="bookmark">lees verder</a>
+                    </p>
+                </article>
+                <article>
+                    <h3>Mobilism 2012</h3>
+                    <footer>
+                        <p>Van <time datetime="2012-05-10">10 mei</time> tot <time datetime="2012-05-11">11 mei</time> in Tuschinski</p>
+                    </footer>
+                    <p>
+                        <a href="#" rel="author">M.S. t Hooft</a>
+                        Mobile is becoming increasingly important to web designers and developers because users expect a site to work on their phones. Simultaneously, the web is becoming increasingly important to the mobile world because it is the only way to deploy an…
+                        <a href="#" rel="bookmark">lees verder</a>
+                    </p>
+                </article>
+                <article>
+                    <h3>Appril</h3>
+                    <footer>
+                        <p>Van <time datetime="2012-04-02">2 april</time> tot <time datetime="2012-04-30">30 april</time> in Amsterdam</p>
+                    </footer>
+                    <p>
+                        <a href="#" rel="author">M. Blekemolen</a>
+                        Apps zijn niet meer weg te denken uit het dagelijks leven van miljoenen gebruikers. Amsterdam heeft het ideale klimaat voor app ontwikkelaars. De stad is hard op weg om internationaal door te breken als Appsterdam, de gelijknamige organisatie die ook…
+                        <a href="#" rel="bookmark">lees verder</a>
+                    </p>
+                </article>
+            </section>
+            
+            <!--
+                Twitter feed:
+                @cmdamsterdam
+                #cmda
+            -->
+
+        </aside>
+
+        <!-- Footer informatie -->
+        <footer>
+            <section id="sitemap">
+                <h2>Sitemap</h2>
+                <ul>
+                    <li>
+                        <a href="#">Opleiding</a>
+                        <ul>
+                            <li><a href="#">Visie &amp; Beleid</a></li>
+                            <li><a href="#">Opbouw Studieprogramma</a></li>
+                            <li><a href="#">Competenties</a></li>
+                            <li><a href="#">Diploma</a></li>
+                            <li><a href="#">Beroepen</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Onderwijsprogramma</a>
+                        <ul>
+                            <li><a href="#">Mededelingen</a></li>
+                            <li><a href="#">Uitagenda</a></li>
+                            <li><a href="#">Propedeuse</a></li>
+                            <li><a href="#">Verdieping 1</a></li>
+                            <li><a href="#">Verdieping 2</a></li>
+                            <li><a href="#">Afstuderen</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Organisatie</a>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Docenten</a></li>
+                            <li><a href="#">Onderwijsbureau</a></li>
+                            <li><a href="#">Stagebureau</a></li>
+                            <li><a href="#">Buitenlandbureau</a></li>
+                            <li><a href="#">Examencommissie</a></li>
+                            <li><a href="#">Decaan</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Stages en Projecten</a>
+                        <ul>
+                            <li><a href="#">Stages</a></li>
+                            <li><a href="#">Projecten</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="contact">
+                <h2>Contact</h2>
+                <p>CMD Amsterdam</p>
+                <p>Bezoekadres: Rhijnspoorplein 1, 1091 GC Amsterdam</p>
+                <p>Postadres: Postbus 1025, 1000 BA Amsterdam</p>
+                <p>Telefoon: 020 595 1855</p>
+                <p>Email: <a href="#" class="email">info@cmd.hva.nl</a></p>
+                <p>RSS: <a href="#" class="rss">Feed intranet</a></p>
+            </section>
+
+            <section id="search">
+                <h2>Zoeken</h2>
+                <form method="get" action="Formulierpagina.html">
+                    <input type="search" name="q">
+                    <input type="submit" value="Zoeken">
+                </form>
+            </section>
+
+            <section id="about" lang="en">
+                <h2>About</h2>
+                <p>CMD Amsterdam is een ontwerp opleiding voor Interactieve Media. Op de opleiding Communication &amp; Multimedia Design (CMD) Amsterdam leer je alles over het ontwerpen van online interactieve media. Dit betekent begrijpen, bedenken en maken van interactieve mediatoepassingen zoals websites, mobiele applicaties en interactieve televisie.</p>
+            </section>
+
+            <section id="credits" lang="en">
+                <h2>Credits</h2>
+                <p>© 2015 Hogeschool van Amsterdam - Domein Digitale Media en Creatieve Industrie - CMD Amsterdam</p>
+            </section>
+
+            <p id="feedback"><a href="#">Geef ons feedback</a></p>
+
+        </footer>
+
+    </body>
+</html>
