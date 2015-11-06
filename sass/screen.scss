@@ -143,8 +143,10 @@ a {
 }
 
 main {
-	padding: .5rem 1rem 2rem;
-	margin: 2rem 1rem 0;
+
+	&>article {
+		background-color: $yellow;
+	}
 
 	#stage > legend, #project > legend {
 		font-size: 2em;
@@ -250,6 +252,9 @@ body>footer {
 	& #contact p {
 		margin: 0;
 	}
+	& #credits {
+		width: 100%;
+	}
 	& #sitemap {
 		width: 100%;
 
@@ -267,6 +272,9 @@ body>footer {
 				}
 			}
 		}
+	}
+	&>section:last-of-type {
+		width: 100%;
 	}
 	img[src*="hva_logo"] {
 		max-width: 100%;
@@ -287,34 +295,51 @@ body>footer {
 @media screen and (max-width: $break-extra-small) {
 	body {
 		max-width: 100vw;
+
+		&>div#main-content>main {
+			margin: 0 .5em;
+			padding: 0;
+
+			&>article {
+				padding: 0 1em;
+			}
+		}
 		
-		header>#nav_container {
-			padding: .8rem 1rem;
-			height: 15rem;
+		header {
+			h1:first-of-type>span, h1 + p {
+				display: none;
+			}
+			&>#nav_container {
+				padding: .8rem 1rem;
+				height: 15rem;
 
-			&>nav {
-				width: 100%;
+				&>nav {
+					width: 100%;
 
-				ul {
-					display: block;
+					ul {
+						display: block;
 
-					&>li {
-						padding: .5rem 0;
-						border-bottom: 1px solid $white;
+						&>li {
+							padding: .5rem 0;
+							border-bottom: 1px solid $white;
 
-						&:last-of-type {
-							border-bottom: 0;
+							&:last-of-type {
+								border-bottom: 0;
+							}
 						}
 					}
 				}
-			}
-			&>h1:first-of-type, 
-			&>p:first-of-type {
-				padding-left: 1rem;
-			}
+				&>h1:first-of-type, 
+				&>p:first-of-type {
+					padding-left: 1rem;
+				}
 
-			&>p.to-profile {
-				float: none;
+				&>p.to-profile {
+					float: none;
+				}
+			}
+			&>#logo_container {
+				display: none;
 			}
 		}
 		section.related {
@@ -326,6 +351,16 @@ body>footer {
 					display: none;
 				}
 			}
+		}
+		footer>#about {
+			max-width: 100%;
+		}
+	}
+	aside{
+		padding: 0 1em;
+
+		&>section>article {
+			width: 100%;
 		}
 	}
 
@@ -344,37 +379,62 @@ body>footer {
 		width: 100%;
 	}
 
+	aside>section>article {
+		width: 100%;
+	}
+
 	body {
 		max-width: 100vw;
+
+		&>div#main-content>main {
+			margin: 0 .5em;
+			padding: 0;
+
+			&>article {
+				padding: 0 1em;
+			}
+		}
 		
-		header>#nav_container {
-			padding: .8rem 1rem;
-			height: 15rem;
+		header {
+			h1:first-of-type>span, h1 + p {
+				display: none;
+			}
 
-			&>nav {
-				width: 100%;
+			&>#nav_container {
+				padding: .8rem 1rem;
+				height: 15rem;
 
-				ul {
-					display: block;
+				&>nav {
+					width: 100%;
 
-					&>li {
-						padding: .5rem 0;
-						border-bottom: 1px solid $white;
+					ul {
+						display: block;
 
-						&:last-of-type {
-							border-bottom: 0;
+						&>li {
+							padding: .5rem 0;
+							border-bottom: 1px solid $white;
+
+							&:last-of-type {
+								border-bottom: 0;
+							}
 						}
 					}
 				}
-			}
-			&>h1:first-of-type, 
-			&>p:first-of-type {
-				padding-left: 1rem;
-			}
+				&>h1:first-of-type, 
+				&>p:first-of-type {
+					padding-left: 1rem;
+				}
 
-			&>p.to-profile {
-				float: none;
+				&>p.to-profile {
+					float: none;
+				}
 			}
+			&>#logo_container {
+				display: none;
+			}
+		}
+		footer>#about {
+			max-width: 100%;
 		}
 	}
 	img {
@@ -388,6 +448,13 @@ body>footer {
 			&>*:not(header) {
 				display: none;
 			}
+		}
+	}
+	aside{
+		padding: 0 1em;
+
+		&>section>article {
+			width: 100%;
 		}
 	}
 }
@@ -497,6 +564,21 @@ body>footer {
 		float: left;
 	}
 
+	body {
+		aside {
+			margin-top: 2rem;
+			padding: 0.5rem 1.5rem;
+			max-width: 20%;
+			background-color: #d8d8d8;
+			border-radius: 2em 0 0 2em;
+			margin-bottom: 2em;
+
+			&>section>article {
+				width: 100%;
+			}
+		}
+	}
+
 	header {
 
 		&>form {
@@ -568,8 +650,8 @@ body>footer {
 
 	main {
 		width: 100%;
-		padding: 0;
-		margin: 0;
+		padding: .5rem 1rem 2rem;
+		margin: 2rem 1rem 0;
 
 		&>form:last-of-type {
 			display: flex;
@@ -584,7 +666,6 @@ body>footer {
 			width: 100%;
 		}
 		&>article, &>section#aanmelden {
-			background-color: $yellow;
 			padding: .5rem 1rem 2rem;
 			margin: 2rem 1rem 0;
 			border-radius: 2em;
