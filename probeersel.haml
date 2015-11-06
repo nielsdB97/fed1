@@ -1,0 +1,36 @@
+!!! 5
+%html
+%head
+  / Voeg een title toe
+  %title Uitprobeersel
+  %meta{ :charset => "utf-8"}
+%body
+  %h1 Introductie tot Haml
+  %h2 Best cool lijkt me
+/
+  Als voorbeeld enkele elementen, zoals:
+  img
+  scripts
+  ul
+  outcomments
+  speciale Haml comments
+
+%ul
+  %li 
+    %a{ :href => "#"}
+      %strong
+        Voorbeeld 1
+  %li 
+    %a{ :href => "#"}
+      Voorbeeld 2
+  %li 
+    %a{ :href => "#"}
+      Voorbeeld 3
+
+-# Ik gebruik geen echt plaatje, maar een placeholder
+%img{ :src => "http://placehold.it/300", :alt => "Placeholder"}
+-# Het is ook cool dat je Ruby kunt gebruiken:
+%p Het is momenteel
+%span= Time.now
+
+%script{ :src => "js/scripts.js"}

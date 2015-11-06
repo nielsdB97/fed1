@@ -1,12 +1,13 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,900);
 *, *:before, *:after {
 	box-sizing: border-box;
 }
 
 // VARIABELEN
+$break-extra-small: 30em;
 $break-small: 38em;
 $break-medium: 48em;
-$break-large: 72em;
+$break-large: 95em;
 
 $yellow: #FFCC00;
 $black: #000000;
@@ -19,56 +20,88 @@ html, body {
 	padding: 0;
 	font-family: 'Open Sans', sans-serif;
 }
+img {
+	max-width: 100%;
+}
+
+body>header>div#logo_container>h1>img {
+	&:nth-child(1):hover {
+		transition: .5s ease-in-out;
+		transform: rotate(360deg);
+	}
+}
+body > header:first-of-type>h1 {
+	padding-left: 1rem;
+
+	& h1 ~ p {
+		padding-left: 1rem;
+	}
+}
 
 header {
 
 	&>form {
-		position: absolute;
-		top: 1rem;
-		right: .5rem;
-
+		
 		& input[type="search"] {
-			padding: 1rem .5rem;
+			padding: .5rem;
+		    width: 18em;
+		    height: 3rem;
+		    font-size: .8em;
+		    border: black solid 1px;
+		    border-radius: .5em;
 		}
 		& button[type="submit"] {
-			width: 1em;
-			height: 1em;
-			background-image: url(../img/search.svg);
-			background-position: center center;
-			background-size: 16px;
+			    width: 3rem;
+			    height: 3rem;
+			    background-image: url(../img/search.svg);
+			    background-color: #fff;
+			    background-position: center center;
+			    background-size: 3em;
+			    position: relative;
+				top: 1rem;
 		}
 	}
-	&>p.to-profile {
-		position: absolute;
-		top: 3rem;
-		right: .5rem;
-	}
 
-	div.logo_container{
+	div#logo_container{
 		background-color: $yellow;
-		width: 100vw;
-		height: 12vh;
+		width: 100%;
+		height: 6em;
 		padding: .5rem 0;
+		text-align: center;
 		border-top: 1px solid #000;
 		border-bottom: 1px solid #000;
+		clear: both;
 		
 		&>img[alt*="logo"] {
 			height: 100%;
 			display: block;
 			margin: 0 auto;
 		}
+
+		&>h1 {
+			color: transparent;
+			width: 100%;
+			font-size: 5em;
+			margin: 0;
+			line-height: 1em;
+
+		    & img {
+			    max-height: 0.7em;
+			    height: auto;
+			}
+		}
 	}
-	div.nav_container {
+	div#nav_container {
 		background-color: $yellow;
-		width: 100vw;
-		height: 5vh;
+		width: 100%;
+		height: 3em;
 		padding: .8rem 2rem;
 		margin-top: 0;
 		border-bottom: 1px solid #000;
 		box-shadow:0 10px 10px -5px black;
 
 		&>nav {
-			width: 50vw;
+			width: 80vw;
 			height: 0;
 			margin: 0 auto;
 			display: block;
@@ -88,6 +121,7 @@ header {
 						&:hover {
 							color: #fff;
 							text-shadow:0 0 .1em white, 0 0 .2em white;
+							font-weight: 900;
 						}
 					}
 				}
@@ -99,23 +133,55 @@ header {
 	}
 }
 
-main {
-	width: 100vw;
-	&>form:last-of-type {
-		display: flex;
-	}
-	&>article, &>section#aanmelden {
-		background-color: $yellow;
-		padding: .5rem 1rem 2rem;
-		margin: 2rem 1rem 0;
-		border-radius: 2em;
+a {
+	color: #333;
+	transition: 1s ease all;
 
-		&>footer {
-			margin-left: 3em;
-			color: #555;
-			line-height: .5em;
-			&+section {
-				margin-top: 3rem;
+	&:hover {
+		color: #111;
+	}
+}
+
+main {
+	padding: .5rem 1rem 2rem;
+	margin: 2rem 1rem 0;
+
+	#stage > legend, #project > legend {
+		font-size: 2em;
+		font-weight: 900;
+	}
+
+	section#aanmelden {
+	    background-color: #fc0;
+	    padding: 1em;
+	}
+
+	&>form:last-of-type {
+	    background-color: #d8d8d8;
+	    padding: .5em;
+	}
+
+	&>form>fieldset {
+		width: 100%;
+		border: 0;
+
+		& legend {
+			margin-top: 2em;
+			font-size: 130%;
+		}
+
+		& label {
+			display: inline-block;
+			width: 100%;
+			margin-bottom: .5em;
+
+			display: flex;
+
+			&>span {
+				min-width: 8em;
+			}
+			&>input {
+				margin-right: 1em;
 			}
 		}
 	}
@@ -126,64 +192,418 @@ section.related {
 	justify-content: space-around;
 	align-items: stretch;
 	padding: .5rem 1rem 2rem;
-		margin: 2rem 1rem 0;
+	margin: 2rem 1rem 0;
+
 	&>h2:first-of-type {
-		width: 100vw;
+		width: 100%;
 	}
 	&>article {
-		width: 18%;
-		&>header {
-			margin-left: 3em;
-			color: #555;
-			line-height: 1.5em;
-		}
+		width: 33.333%;
 	}
 }
 
 aside {
 	display: flex;
 	flex-direction: column;
-	width: 20vw;
+	flex-wrap: no-wrap;
+
+	&>section {
+		display: flex;
+		flex-wrap: wrap;
+
+		h2 {
+			width: 100%;
+		}
+
+		&>article {
+			width: 20%;
+		}
+	}
+}
+
+body>footer {
+	width: 100%;
+	clear: both;
+	display: flex;
+	flex-wrap: wrap;
+    padding: .5rem 1rem 2rem;
+    border-top: .2em solid #333;
+    background-color: #f1f1f1;
+    text-transform: uppercase;
+	
+	& #about {
+		max-width: 40%;
+	}
+	&>section {
+		margin-right: 1em;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	& #feedback {
+	    flex-basis: 10em;
+	    flex-grow: 2;
+	    width: 100%;
+	}
+	& #contact p {
+		margin: 0;
+	}
+	& #sitemap {
+		width: 100%;
+
+		&> ul {
+			display: flex;
+			flex-wrap: wrap;
+			list-style-type: none;
+
+			&>li {
+				padding-left: 1em;
+				margin-bottom: 1.5rem;
+
+				&:first-of-type {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+	img[src*="hva_logo"] {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+#hover_audio {
+	display: none;
+}
+
+.onzichtbaar {
+	display: none;
 }
 
 // MEDIA QUERIES
 
-@media screen and (max-width: $break-small) {
-	body div.nav_container {
-		padding: .8rem 1rem;
-		height: 15rem;
+@media screen and (max-width: $break-extra-small) {
+	body {
+		max-width: 100vw;
+		
+		header>#nav_container {
+			padding: .8rem 1rem;
+			height: 15rem;
 
-		&>nav {
-			width: 100%;
-			& ul {
-				display: block;
-				&>li {
-					padding: .5rem 0;
-					border-bottom: 1px solid $white;
-					&:last-of-type {
-						border-bottom: 0;
+			&>nav {
+				width: 100%;
+
+				ul {
+					display: block;
+
+					&>li {
+						padding: .5rem 0;
+						border-bottom: 1px solid $white;
+
+						&:last-of-type {
+							border-bottom: 0;
+						}
 					}
 				}
+			}
+			&>h1:first-of-type, 
+			&>p:first-of-type {
+				padding-left: 1rem;
+			}
+
+			&>p.to-profile {
+				float: none;
+			}
+		}
+		section.related {
+			&>article {
+				display: block;
+				width: 100%;
+
+				&>*:not(header) {
+					display: none;
+				}
+			}
+		}
+	}
+
+	body#formulierpagina>aside>section>article {
+		width: 100%;
+	}
+
+	body>header>div#logo_container>h1>img {
+		&:nth-child(1), &:nth-child(3), &:nth-child(5) {
+			display: none;
+		}
+	}
+}
+@media screen and (min-width: $break-extra-small) and (max-width: $break-small) {
+	body#formulierpagina>aside>section>article {
+		width: 100%;
+	}
+
+	body {
+		max-width: 100vw;
+		
+		header>#nav_container {
+			padding: .8rem 1rem;
+			height: 15rem;
+
+			&>nav {
+				width: 100%;
+
+				ul {
+					display: block;
+
+					&>li {
+						padding: .5rem 0;
+						border-bottom: 1px solid $white;
+
+						&:last-of-type {
+							border-bottom: 0;
+						}
+					}
+				}
+			}
+			&>h1:first-of-type, 
+			&>p:first-of-type {
+				padding-left: 1rem;
+			}
+
+			&>p.to-profile {
+				float: none;
+			}
+		}
+	}
+	img {
+		max-width: 100% !important;
+	}
+	section.related {
+		&>article {
+			display: block;
+			width: 100%;
+
+			&>*:not(header) {
+				display: none;
 			}
 		}
 	}
 }
 @media screen and (min-width: $break-small) and (max-width: $break-medium) {
-	div.nav_container {
-		padding: .8rem 0 !important;
+	header {
 
-		&>nav {
-			width: 100% !important;
+		&>form {
+			float: left;
+		}
+		&>p.to-profile {
+			float: right;
+		}
+
+		div#logo_container{
+			background-color: $yellow;
+			width: 100%;
+			height: 6em;
+			padding: .5rem 0;
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+			
+			&>* {
+				width: 50%;
+			}
+		}
+		div#nav_container {
+			background-color: $yellow;
+			width: 100%;
+			height: 3em;
+			padding: .8rem 0 !important;
+			margin-top: 0;
+			border-bottom: 1px solid #000;
+			box-shadow:0 10px 10px -5px black;
+
+			& nav {
+				width: 100% !important;
+				height: 0;
+				margin: 0 auto;
+				display: block;
+
+				& ul {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+
+					&>li {
+						&>a {
+							color: #000;
+							transition: .5s ease;
+							&:hover {
+								color: #fff;
+								text-shadow:0 0 .1em white, 0 0 .2em white;
+							}
+						}
+					}
+				}
+				& a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+	section.related>article {
+		width: 100%;
+		margin-bottom: 2em;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	body#formulierpagina {
+		aside {
+			margin-top: 2rem;
+			padding: 0.5rem 1.5rem;
+			max-width: 20%;
+			background-color: #d8d8d8;
+			border-radius: 2em 0 0 2em;
+			margin-bottom: 2em;
 		}
 	}
 }
 @media screen and (min-width: $break-medium) and (max-width: $break-large) {
-	div.nav_container>nav {
-			width: 80vw !important;
+	div#nav_container>nav {
+			width: 80% !important;
+	}
+	body>header {
+		&>form {
+			float: left;
+		}
+		& p.to-profile {
+			float: right;
+		}
+	}
+
+	body>footer {
+		section>img[src*="hva_logo"] {
+			max-width: 40em;
+		}
 	}
 }
 @media screen and (min-width: $break-large) {
-	body + header:first-of-type h1, body + header:first-of-type p {
-		padding-left: 1rem;
+	#main-content {
+		max-width: 80%;
+		float: left;
+	}
+
+	header {
+
+		&>form {
+			position: absolute;
+			top: 1rem;
+			right: .5rem;
+		}
+		&>p.to-profile {
+			position: absolute;
+			top: 4.5rem;
+			right: .5rem;
+		}
+
+		div#logo_container{
+			width: 100%;
+			background-color: $yellow;
+			height: 6em;
+			padding: .5rem 0;
+			border-top: 1px solid #000;
+			border-bottom: 1px solid #000;
+			
+			&>img[alt*="logo"] {
+				height: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		div#nav_container {
+			background-color: $yellow;
+			width: 100%;
+			height: 3em;
+			padding: .8rem 2rem;
+			margin-top: 0;
+			border-bottom: 1px solid #000;
+			box-shadow:0 10px 10px -5px black;
+
+			&>nav {
+				width: 50%;
+				height: 0;
+				margin: 0 auto;
+				display: block;
+				width: 80vw !important;
+
+				&>ul {
+					list-style-type: none;
+					margin: 0;
+					padding: 0;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+
+					&>li {
+						&>a {
+							color: #000;
+							transition: .5s ease;
+							&:hover {
+								color: #fff;
+								text-shadow:0 0 .1em white, 0 0 .2em white;
+							}
+						}
+					}
+				}
+				& a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	main {
+		width: 100%;
+		padding: 0;
+		margin: 0;
+
+		&>form:last-of-type {
+			display: flex;
+			flex-wrap: wrap;
+			padding: 0 8em;
+			background-color: #d8d8d8;
+			margin: 0 5em;
+			margin-top: 1em;
+		    padding: 2em;
+		}
+		& article picture>* {
+			width: 100%;
+		}
+		&>article, &>section#aanmelden {
+			background-color: $yellow;
+			padding: .5rem 1rem 2rem;
+			margin: 2rem 1rem 0;
+			border-radius: 2em;
+
+			section#aanmelden>footer {
+				margin-left: 3em;
+				color: #555;
+				line-height: .5em;
+
+				&+section {
+					margin-top: 3rem;
+				}
+			}
+		}
+	}
+
+	body>footer {
+		section>img[src*="hva_logo"] {
+			max-width: 40em;
+		}
 	}
 }

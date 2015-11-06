@@ -2,20 +2,36 @@
 <html lang="nl">
     <head>
         <meta charset="utf-8">
-        <title>Formulierpagina</title>
+        <title>Formulierpagina | CMD Amsterdam</title>
         <link rel="stylesheet" type="text/css" href="css/screen.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" type="image/png" href="/img/fed_handje.png">
     </head>
-    <body>
+    <body id="formulierpagina">
 
         <!-- header met logo & navigatie -->
         <header>
             <h1>CMD Amsterdam - Intranet</h1>
             <p>Communication and Multimedia Design is een ontwerpopleiding voor interactieve media in Amsterdam.</p>
-            <div class="logo_container">
-                <img src="img/cmd_logo.png" alt="CMD logo">
+            <form method="get" action="formulier.html">
+                <label>
+                    Zoeken
+                    <input type="search" placeholder="Zoek op titel, beschrijving, etc…" name="q">
+                </label>
+                <button type="submit" value="Zoek"></button>
+            </form>
+            <p class="to-profile"><a href="#">Profielpagina Elena Harris</a></p>
+            <div id="logo_container">
+                <h1>
+                    <img src="img/cmd_icon_hash_tag.png">
+                    <img src="img/c.svg" alt="C" id="audio_trigger_c">
+                    <img src="img/cmd_icon_girl.png">
+                    <img src="img/m.svg" alt="C" id="audio_trigger_m">
+                    <img src="img/cmd_icon_phone.png">
+                    <img src="img/d.svg" alt="C" id="audio_trigger_d">
+                </h1>
             </div>
-            <div class="nav_container">
+            <div id="nav_container">
                 <nav>
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -26,14 +42,6 @@
                     </ul>
                 </nav>
             </div>
-            <form method="get" action="Formulierpagina.html">
-                <label>
-                    Zoeken
-                    <input type="search" placeholder="Zoek op titel, beschrijving, etc…" name="q">
-                </label>
-                <button type="submit">Zoek!</button>
-            </form>
-            <p class="to-profile"><a href="#">Profielpagina Elena Harris</a></p>
         </header>
 
         <!-- Main article - Contact formulier  -->
@@ -84,11 +92,11 @@
                 <fieldset>
                     <legend>Ik wil mij aanmelden:</legend>
                     <label>
-                        <input type="radio" name="submit-for" value="project">
+                        <input type="radio" id="projectButton" name="submit-for" value="project">
                         <span>Voor een project</span>
                     </label>
                     <label>
-                        <input type="radio" name="submit-for" value="stage">
+                        <input type="radio" id="stageButton" name="submit-for" value="stage">
                         <span>Als stagebedrijf</span>
                     </label>
                 </fieldset>
@@ -517,6 +525,22 @@
             <p id="feedback"><a href="#">Geef ons feedback</a></p>
 
         </footer>
+        <div id="hover_audio">
+            <audio id="clip_c">
+                <source src="sounds/c.mp3">
+                <source src="sounds/c.ogg">
+            </audio>
 
+            <audio id="clip_m">
+                <source src="sounds/m.mp3">
+                <source src="sounds/m.ogg">
+            </audio>
+
+            <audio id="clip_d">
+                <source src="sounds/d.mp3">
+                <source src="sounds/d.ogg">
+            </audio>
+        </div>
+    <script type="text/javascript" src="js/scripts.min.js"></script>
     </body>
 </html>
